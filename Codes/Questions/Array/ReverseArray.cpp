@@ -1,28 +1,49 @@
-#include<iostream>
-#include<vector>
+// Include headers for input/output, vector, and the swap function
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+// Use the standard namespace
 using namespace std;
 
-void reverse(vector<int>& nums){
+// Function to reverse a vector in-place
+void reverse(vector<int>& nums) {
+    // Pointers for the start and end of the vector
     int start = 0;
     int end = nums.size() - 1;
-    while(start < end){
-        swap(nums[start] , nums[end]);
+
+    // Loop until the pointers meet in the middle
+    while (start < end) {
+        // Swap the start and end elements
+        swap(nums[start], nums[end]);
+        // Move pointers towards the center
         start++;
         end--;
     }
 }
 
-void printArray(vector<int>& nums){
-    for(int num : nums){
-        cout<< num <<" ";
+// Function to print the elements of a vector
+void printArray(const vector<int>& nums) {
+    // Loop through each number in the vector
+    for (int num : nums) {
+        // Print the number and a space
+        cout << num << " ";
     }
 }
 
-int main(){
-    vector<int> nums = {10,15,20,-100};
+// Main program entry point
+int main() {
+    // Create and initialize a vector
+    vector<int> nums = {10, 15, 20, -100};
+
+    // Call the function to reverse the vector
     reverse(nums);
-    cout<<"Reverse of the given array is : ";
+
+    // Print a message
+    cout << "Reverse of the given array is : ";
+    // Call the function to print the reversed vector
     printArray(nums);
 
+    // Indicate successful execution
     return 0;
 }
