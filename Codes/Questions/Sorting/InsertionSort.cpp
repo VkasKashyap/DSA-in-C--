@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 
-// Use the standard namespace to avoid prefixing with std::
 using namespace std;
 
 void insertionSort(vector<int>& nums) {
