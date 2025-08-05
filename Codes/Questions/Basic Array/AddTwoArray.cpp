@@ -5,11 +5,10 @@
 using namespace std; 
 
 vector<int> findArraySum(vector<int>& a, vector<int>& b){
-    // Initialize pointers to the last digit of each array
     int i = a.size() - 1;
     int j = b.size() - 1;
 
-    vector<int> ans; // Vector to store the digits of the sum
+    vector<int> ans;
     int carry = 0;   // Variable to store carry-over from addition
 
     // Loop while both arrays have digits to process
