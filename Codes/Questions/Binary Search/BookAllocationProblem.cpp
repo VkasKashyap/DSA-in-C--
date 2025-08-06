@@ -2,7 +2,6 @@
 #include <vector>
 #include <numeric> // Required for std::accumulate
 
-// Use the standard namespace to avoid writing std:: before every command
 using namespace std;
 
 bool isPossible(vector<int>& nums, int n, int m, int mid) {
