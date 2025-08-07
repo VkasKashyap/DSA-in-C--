@@ -1,8 +1,6 @@
-// Include necessary libraries for input/output and vectors
 #include<iostream>
 #include<vector>
 
-// Use the standard namespace for convenience
 using namespace std;
 
 // Function to find the intersection of two sorted vectors using a two-pointer approach
