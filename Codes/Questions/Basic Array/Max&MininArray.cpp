@@ -3,7 +3,7 @@
 #include <vector>
 #include <climits>
 
-// Use the standard C++ namespace
+// Use the standard C++ namespace      
 using namespace std;
 
 // Function to find the maximum value in a vector
