@@ -1,7 +1,6 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-
 void function(int i, vector<int>& nums, int k, vector<int>& ans, int sum, int n){
     if(i == n){
         if(sum == k){
