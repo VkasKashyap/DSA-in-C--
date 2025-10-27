@@ -44,6 +44,27 @@ public:
     }
 };
 
+Node* cycle(Node* head){
+    if(head == NULL){
+        return NULL;
+    }
+    Node* slow = head;
+    Node* fast = head;
+    while(fast != NULL && fast -> next != NULL){
+        slow = slow -> next;
+        fast = fast -> next -> next;
+        if(slow == fast){
+            slow = head;
+            while(slow != fast){
+                slow = slow -> next;
+                fast = fast -> next;
+            }
+            return slow;
+        }
+    }
+    return NULL;
+}
+
 
 
 int main(){
@@ -53,8 +74,17 @@ int main(){
     mylist.InsertAtEnd(30);
     mylist.InsertAtEnd(40);
 
-    cout << "Original list: " << endl;
-    mylist.PrintList();
+    
+
+    mylist.head -> next -> next -> next = mylist.head -> next;
+    Node* cycleStart = cycle(mylist.head);
+    if(cycleStart != NULL){
+        cout<<"cycle start at "<<cycleStart -> data<<endl;
+    }
+    else{
+        cout<<"cycle is not preset"<<endl;
+    }
+
     
 
 
