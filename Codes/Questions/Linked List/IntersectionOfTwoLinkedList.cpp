@@ -44,7 +44,20 @@ public:
     }
 };
 
-
+Node* getIntersection(Node* headA , Node* headB){
+    Node* ptrA = headA;
+    while(ptrA != NULL){
+        Node* ptrB = headB;
+        while(ptrB != NULL){
+            if(ptrA == ptrB){
+                return ptrA;
+            }
+            ptrB = ptrB -> next;
+        }
+        ptrA = ptrA -> next;
+    }
+    return NULL;
+}
 
 int main(){
     LinkedList mylist;
@@ -53,10 +66,24 @@ int main(){
     mylist.InsertAtEnd(30);
     mylist.InsertAtEnd(40);
 
+    LinkedList newlist;
+    newlist.InsertAtEnd(5);
+    newlist.InsertAtEnd(15);
+    newlist.head -> next -> next = mylist.head -> next ;
+
+
     cout << "Original list: " << endl;
     mylist.PrintList();
-    
+    cout << "Second list: " << endl;
+    newlist.PrintList();
 
+    Node* ans = getIntersection(mylist.head, newlist.head);
+    if(ans != NULL){
+        cout<<"Intersection of two Linked list is : "<<ans -> data<<endl;
+    }
+    else{
+        cout<<"Intersection is not present"<<endl;
+    }
 
 
 
